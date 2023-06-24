@@ -11,7 +11,7 @@ RUN echo "export COLUMNS=300" >> /home/appuser/.bashrc
 RUN echo "alias sf=/appdata/www/bin/console" >> /home/appuser/.bashrc
 
 COPY ./php.ini /usr/local/etc/php/php.ini
-COPY ./xdebug-linux.ini /usr/local/etc/php/xdebug.ini
+COPY ./xdebug.ini /usr/local/etc/php/xdebug.ini
 RUN apk add --update linux-headers
 RUN docker-php-source extract \
     && apk add --update --virtual .build-deps autoconf g++ make pcre-dev icu-dev openssl-dev libxml2-dev libmcrypt-dev git libpng-dev \
